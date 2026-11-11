@@ -1,0 +1,224 @@
+:root {
+  --bg: #edf8d9;
+  --card-bg: #ffffff;
+  --border: #1b455b;
+  --text: #1b455b;
+  --text-muted: #475569;
+  --accent: #1b455b;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 60px;
+  background: var(--card-bg);
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-proto {
+  background: #dcfce7;
+  border: 1.5px dashed var(--border);
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+.user-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-pill {
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+/* Sidebar */
+sidebar {
+  width: 220px;
+  background: var(--card-bg);
+  border-right: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1.5px solid transparent;
+  padding: 12px;
+  border-radius: var(--radius);
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.nav-btn:hover {
+  background: #f1f5f9;
+  color: var(--text);
+}
+
+.nav-btn.active {
+  background: #f1f5f9;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-content {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tab-content.active {
+  display: flex;
+}
+
+.page-title {
+  border-bottom: 2px dashed #cbd5e1;
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+}
+
+.page-title h2 { font-size: 20px; }
+.page-title p { font-size: 13px; color: var(--text-muted); }
+
+/* Games Grid */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.game-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 3px 3px 0px var(--border);
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.game-title { font-size: 16px; font-weight: 700; }
+.game-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+.game-desc { font-size: 13px; line-height: 1.4; color: #334155; margin-bottom: 12px; }
+
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.btn {
+  background: var(--text);
+  color: white;
+  border: 1.5px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #1b455b;
+  transition: transform 0.1s;
+}
+
+.btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0px #1b455b; }
+
+/* Shop Grid */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  flex: 1;
+}
+
+.shop-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  box-shadow: 3px 3px 0px var(--border);
+}
+
+.shop-icon { font-size: 36px; margin-bottom: 6px; }
+.shop-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.shop-desc { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
