@@ -20,14 +20,14 @@
   </header>
 
   <div class="app-body">
-    <!-- Zijbalk navigatie -->
+    <!-- Zijbalk navigatie met directe links naar de pagina's -->
     <sidebar>
-      <button class="nav-btn active" onclick="switchTab('spellen', this)">🎮 Spellen</button>
-      <button class="nav-btn" onclick="switchTab('shop', this)">🛍️ Beloningen</button>
+      <a href="index.html" class="nav-btn active">🎮 Spellen</a>
+      <a href="beloningen-shop.html" class="nav-btn">🛍️ Beloningen-shop</a>
     </sidebar>
 
     <main>
-      <div id="tab-spellen" class="tab-content active">
+      <div class="tab-content active">
         <div class="page-title">
           <h2>Korte Fysieke Spellen (5 - 10 Min)</h2>
           <p>Kies een spel, pak de spullen erbij en speel het fysiek op tafel.</p>
@@ -111,50 +111,9 @@
 
         </div>
       </div>
-
-      <!-- SHOP TAB -->
-      <div id="tab-shop" class="tab-content">
-        <div class="page-title">
-          <h2>Beloningen Shop (Mossy Collectie)</h2>
-          <p>Wissel je fysiek verdiende punten in voor merch en accessoires.</p>
-        </div>
-        <div class="shop-grid">
-          <div class="shop-card">
-            <div class="shop-icon">🧢</div>
-            <div class="shop-title">Groene Monster Pet</div>
-            <div class="shop-desc">Verstelbare cap met borduursel</div>
-            <button class="btn" onclick="buyItem('Groene Monster Pet', 150)">150 PT</button>
-          </div>
-          <div class="shop-card">
-            <div class="shop-icon">🧤</div>
-            <div class="shop-title">Vingerloze Handschoenen</div>
-            <div class="shop-desc">Warme gebreide handschoenen</div>
-            <button class="btn" onclick="buyItem('Vingerloze Handschoenen', 200)">200 PT</button>
-          </div>
-          <div class="shop-card">
-            <div class="shop-icon">📿</div>
-            <div class="shop-title">Kralen Armbanden Set</div>
-            <div class="shop-desc">Handgemaakte natuurstenen set</div>
-            <button class="btn" onclick="buyItem('Kralen Armbanden Set', 100)">100 PT</button>
-          </div>
-          <div class="shop-card">
-            <div class="shop-icon">🗿</div>
-            <div class="shop-title">Kleine 3D Figuurtjes</div>
-            <div class="shop-desc">Set van 4 mini verzamelfiguren</div>
-            <button class="btn" onclick="buyItem('Kleine 3D Figuurtjes', 250)">250 PT</button>
-          </div>
-          <div class="shop-card">
-            <div class="shop-icon">🧸</div>
-            <div class="shop-title">Mossy Monster Knuffel</div>
-            <div class="shop-desc">Zachte knuffel van 25 cm</div>
-            <button class="btn" onclick="buyItem('Mossy Monster Knuffel', 500)">500 PT</button>
-          </div>
-        </div>
-      </div>
     </main>
   </div>
 
-  <!-- Koppeling naar je JavaScript bestand in de javascript map -->
   <script src="javascript/script.js"></script>
 </body>
 </html>
