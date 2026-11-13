@@ -1,9 +1,13 @@
 function opengame(buttonID){
-const knop = document.getElementByClass('scenario-keuze-pagina');
+const knop = document.getElementById(buttonID);
 
-knop.addEventListener('click', function() {
-    
-    
-    window.location.href = 'ScenarioKeuze.html';
+if (knop) {
+    knop.addEventListener('click', function() {
+            window.location.href = 'ScenarioKeuze.html'
 });
+          }
+    
+    
 }
+
+opengame('scenario-keuze-pagina')
