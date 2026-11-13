@@ -1,4 +1,4 @@
-function opengame(buttonID){
+function openScherm(buttonID){
 const knop = document.getElementById(buttonID);
 
 if (knop) {
