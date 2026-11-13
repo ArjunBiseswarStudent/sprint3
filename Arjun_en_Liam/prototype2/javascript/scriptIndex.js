@@ -1,5 +1,5 @@
 function opengame(buttonID){
-const knop = document.getElementById('klik hier om naar de Scenario keuze pagina te gaan');
+const knop = document.getElementByClass('scenario-keuze-pagina');
 
 knop.addEventListener('click', function() {
     
