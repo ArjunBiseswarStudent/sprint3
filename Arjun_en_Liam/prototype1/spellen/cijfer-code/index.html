@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cijfer-Coder - Fysiek Spellenplatform</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <h2>Cijfer-Coder</h2>
+      <span class="badge-proto">30 PT</span>
+    </div>
+    <div class="user-stats">
+      <div class="stat-pill">⭐ <span id="user-points">0</span> PT</div>
+    </div>
+  </header>
+
+  <main class="game-main">
+    <div class="page-title">
+      <h2>Fysieke Speelmodus</h2>
+      <p>Schrijf een geheim 3-cijferig getal op. De ander moet binnen 10 beurten raden met feedback (Goed/Plek/Fout).</p>
+    </div>
+    <div class="play-container">
+      <div class="timer-display" id="timer">05:00</div>
+      <div class="timer-controls">
+        <button class="btn btn-secondary" onclick="toggleTimer()">Start / Pauze</button>
+        <button class="btn btn-secondary" onclick="resetTimer()">Reset</button>
+      </div>
+      <div class="result-box">
+        <h3>Wie heeft het fysieke potje gewonnen?</h3>
+        <div class="result-buttons">
+          <button class="btn" onclick="finishGame(true, 30)">🏆 Ik heb gewonnen! (+30 PT)</button>
+          <button class="btn btn-secondary" onclick="finishGame(false, 0)">❌ Verloren / Medespeler</button>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 15px;">
+      <a href="/Arjun_en_Liam/prototype1/index.html" class="btn btn-secondary">← Terug naar Spellenoverzicht</a>
+    </div>
+  </main>
+
+  <script src="javascript/script.js"></script>
+</body>
+</html>
