@@ -13,8 +13,8 @@ let randomqoute = Math.floor(Math.random() *quotes.length);
 let gekozenqoute = quotes[randomqoute];
 
 document.getElementById("quotePlek").innerText = gekozenqoute;
-
-
-setInterval(ToonWillekeurigeQuote, 4000)
 }
 
+toonqouteinrandomvoligorde();
+
+setInterval(ToonWillekeurigeQuote, 4000)
