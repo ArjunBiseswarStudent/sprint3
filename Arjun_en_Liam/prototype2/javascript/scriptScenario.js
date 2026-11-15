@@ -1,29 +1,39 @@
-function Geldberekening(verkregenGeld, Kosten1, Kosten2, Kosten3){
-    let TotaleKosten = Kosten1 + Kosten2 + Kosten3;
-    let GeldOver = VerkregenGeld - TotaleKosten;
 
-let huidigSaldo = GeldOver; 
-return GeldOver;
+let huidigSaldo = 0;
 
+function Geldberekening() {
+
+    let verkregenGeld = Number(document.getElementById("verkregenGeld").innerText);
+    let kosten1 = Number(document.getElementById("kostenAbonnementen").innerText);
+    let kosten2 = Number(document.getElementById("kostenlunch").innerText);
+    let kosten3 = Number(document.getElementById("kostenHobbys").innerText);
+
+    let totaleKosten = kosten1 + kosten2 + kosten3;
+    
+
+    huidigSaldo = verkregenGeld - totaleKosten;
+
+    console.log("Dynamisch geladen startsaldo:", huidigSaldo);
 }
 
-Geldberekening(350, 12, 35, 50);
+
+Geldberekening();
+
 
 
 document.getElementById("zoekknop").addEventListener("click", function() {
     let uitgave = Number(document.getElementById("bedrag").value);
     
-    huidigSaldo = huidigSaldo - uitgave;
-    console.log("Nieuw resterend saldo:", huidigSaldo);
-
-
-    if(uitgave > huidigSaldo){
-        alert("let op! Je heb niet genoeg geld over om dit te besteden");
-    } else {
+    if (uitgave > huidigSaldo) {
+        alert("Let op! Je hebt niet genoeg geld over om dit te besteden.");
+    } 
+    else {
         huidigSaldo = huidigSaldo - uitgave;
-        alert("uitgave Gelukt! Resterend geld: " + huidigSaldo);
+        
+        alert("Uitgave gelukt! Resterend geld: " + huidigSaldo);
+        console.log("Nieuw resterend saldo:", huidigSaldo);
     }
-  });
+});
   
 
 
