@@ -13,6 +13,9 @@ function Geldberekening() {
 
     huidigSaldo = verkregenGeld - totaleKosten;
 
+
+    document.getElementById("resterendSaldo").innerText = huidigSaldo;
+
     console.log("Dynamisch geladen startsaldo:", huidigSaldo);
 }
 
