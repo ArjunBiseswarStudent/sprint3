@@ -20,7 +20,7 @@
 
     <div Class="App-body">
         <main>
-            <div id="uitleg-scenario-keuze-pagina" Class="tab content active">
+            <div id="Oefen-scenario" Class="tab content active">
                 <div Class="Pagina-title">
                     <h2>Dit is een oefenscenario</h2>
                     <p>Tijdens dit scenario leer je hoe de activiteit precies werkt en wat je precies moet doen</p>
@@ -29,29 +29,30 @@
 
                 <div Id="tutorial oefenscenario" Class="tab-content active">
                     <div Class="tutorial-oefenscenario-verkregengeld">
-                        <p>verkregen bedrag = 400 euro</p>
+                        <p>verkregen bedrag = <span id="verkregenGeld">400</span> euro</p>
                     </div>
                     <div Class="Tutorial-oefescenario-Verkregen-geld">
                         <p> Hier vindt je het verkregen geld. Tijdens dit scenario bepaal jij wat er met het geld gebeurt. Haal hierbij eerst het geld eraf wat in de tekst hieronder gegeven wordt</p>
                     </div>
                     <div Class="Tutorial-oefenscenario-Tekst">
                         <p> Je krijgt van je bijbaan bij de Albert Heijn 400 euro. Je bent de volgende kosten kwijt:
-                            - Nextflix 7 euro per maand
-                            - lunch 40 euro per maand
-                            - Hobby 30 euro per maand
+                            - Nextflix <span id="kostenAbonnementen">7</span> euro per maand
+                            - lunch <span id="kostenlunch">40</span> euro per maand
+                            - Hobby <span id="kostenHobbys" >30</span> euro per maand
                         </p>
                     <div Class="Tutorial-oefenscenario-Tekst">
                         <p> in deze tekst vindt je welke bedragen er van het verkregen geld af moeten</p>
                     </div>
 
-                <div Class="Tutorial-Oefenscenario-Tekst">
+               <div Class="Tutorial-Oefenscenario-Tekst">
                     <label for="Bedrag"> Voer in het invulveld hieronder hoeveel geld je wilt spenderen</label>
                     <input
-                    Type="number"
+                    type="number"
                     id="bedrag"
-                    placeholder="Voer hier je bedrag in "
+                    placeholder="Voer hier je bedrag in"
                     min="0">
-                    <button type="button" onclick="Controleerbedrag()">Controleer bedrag</button>"
+                    <button type="button" id="Controleerbedragknop">Controleer bedrag</button>
+                    <p>Resterend saldo: <span id="resterendSaldo">0</span> euro</p>
                 </div>
 
 
@@ -66,6 +67,7 @@
 
         </main>
     </div>
+     <script src="javascript/scriptScenario.js" defer></script>
 </body>
 
 <footer>
