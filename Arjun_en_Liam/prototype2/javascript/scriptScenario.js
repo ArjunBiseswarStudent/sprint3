@@ -15,8 +15,6 @@ function Geldberekening() {
 
 
     document.getElementById("resterendSaldo").innerText = huidigSaldo;
-
-    console.log("Dynamisch geladen startsaldo:", huidigSaldo);
 }
 
 
@@ -36,6 +34,7 @@ document.getElementById("Controleerbedragknop").addEventListener("click", functi
         alert("Uitgave gelukt! Resterend geld: " + huidigSaldo);
         console.log("Nieuw resterend saldo:", huidigSaldo);
     }
+    console.log("Dynamisch geladen startsaldo:", huidigSaldo);
 });
   
 
