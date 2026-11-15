@@ -21,7 +21,7 @@ Geldberekening();
 
 
 
-document.getElementById("zoekknop").addEventListener("click", function() {
+document.getElementById("Controleerbedragknop").addEventListener("click", function() {
     let uitgave = Number(document.getElementById("bedrag").value);
     
     if (uitgave > huidigSaldo) {
