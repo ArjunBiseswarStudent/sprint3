@@ -3,6 +3,7 @@ function Geldberekening(verkregenGeld, Kosten1, Kosten2, Kosten3){
     let GeldOver = VerkregenGeld - TotaleKosten;
 
 let huidigSaldo = GeldOver; 
+return GeldOver;
 
 }
 
