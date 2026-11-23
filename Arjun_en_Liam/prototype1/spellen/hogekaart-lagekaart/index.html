@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoge Kaart, Lage Kaart - Fysiek Spellenplatform</title>
+  <link rel="stylesheet" href="../cijfer-code/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="../../javascript/fysiek-spel.js" defer></script>
+  <script src="javascript/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <h1>Hoge Kaart, Lage Kaart</h1>
+      <span class="badge-proto">25 PT</span>
+    </div>
+    <div class="user-stats">
+      <div class="stat-pill">⭐ <span id="user-points">0</span> PT</div>
+    </div>
+  </header>
+
+  <main class="game-main">
+    <div class="page-title">
+      <h2>Speelmodus</h2>
+      <p>Leg tegelijk één kaart neer. De hoogste kaart wint de ronde, behalve als een 1 tegenover een 10 ligt: dan wint de 1. Wie na vijf rondes de meeste punten heeft, wint het potje.</p>
+    </div>
+
+    <section class="play-container" aria-label="Speel Hoge Kaart, Lage Kaart">
+      <div class="timer-display" id="timer" role="timer" aria-label="Resterende speeltijd">05:00</div>
+      <div class="timer-controls">
+        <button class="btn btn-secondary" id="toggle-timer" type="button">Start / Pauze</button>
+        <button class="btn btn-secondary" id="reset-timer" type="button">Reset</button>
+      </div>
+
+      <div class="result-box">
+        <h3>Wie heeft het fysieke potje gewonnen?</h3>
+        <div class="result-buttons">
+          <button class="btn" id="win" type="button">🏆 Ik heb gewonnen! (+25 PT)</button>
+          <button class="btn btn-secondary" id="loss" type="button">❌ Verloren / Medespeler</button>
+        </div>
+        <p id="game-status" role="status"></p>
+      </div>
+    </section>
+
+    <div class="back-link">
+      <a href="../../index.html" class="btn btn-secondary">← Terug naar Spellenoverzicht</a>
+    </div>
+  </main>
+</body>
+</html>
