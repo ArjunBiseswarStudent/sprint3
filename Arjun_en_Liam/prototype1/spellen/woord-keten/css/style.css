@@ -15,3 +15,35 @@
 #game-status:not(:empty) {
   margin-top: 12px;
 }
+
+@media (max-width: 768px) {
+  .logo-area {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .play-container {
+    padding: 16px;
+  }
+
+  .page-title p,
+  .btn {
+    font-size: 0.875rem;
+  }
+
+  .timer-controls {
+    flex-wrap: wrap;
+  }
+
+  .timer-controls .btn {
+    flex: 1 1 7rem;
+    width: auto;
+  }
+
+  .btn {
+    min-height: 44px;
+    display: inline-grid;
+    place-items: center;
+  }
+}
