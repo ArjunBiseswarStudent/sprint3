@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20 Vragen Mystery - Fysiek Spellenplatform</title>
+  <link rel="stylesheet" href="../cijfer-code/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="../../javascript/fysiek-spel.js" defer></script>
+  <script src="javascript/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <h1>20 Vragen Mystery</h1>
+      <span class="badge-proto">40 PT</span>
+    </div>
+    <div class="user-stats">
+      <div class="stat-pill">⭐ <span id="user-points">0</span> PT</div>
+    </div>
+  </header>
+
+  <main class="game-main">
+    <div class="page-title">
+      <h2>Speelmodus</h2>
+      <p>Gebruik een mystery-kaart. Stel maximaal 20 ja/nee-vragen om de dader van een korte fictieve misdaad te ontmaskeren.</p>
+    </div>
+
+    <section class="play-container" aria-label="Speel 20 Vragen Mystery">
+      <div class="timer-display" id="timer" role="timer" aria-label="Resterende speeltijd">08:00</div>
+      <div class="timer-controls">
+        <button class="btn btn-secondary" id="toggle-timer" type="button">Start / Pauze</button>
+        <button class="btn btn-secondary" id="reset-timer" type="button">Reset</button>
+      </div>
+
+      <div class="result-box">
+        <h3>Wie heeft het fysieke potje gewonnen?</h3>
+        <div class="result-buttons">
+          <button class="btn" id="win" type="button">🏆 Ik heb gewonnen! (+40 PT)</button>
+          <button class="btn btn-secondary" id="loss" type="button">❌ Verloren / Medespeler</button>
+        </div>
+        <p id="game-status" role="status"></p>
+      </div>
+    </section>
+
+    <div class="back-link">
+      <a href="../../index.html" class="btn btn-secondary">← Terug naar Spellenoverzicht</a>
+    </div>
+  </main>
+</body>
+</html>
