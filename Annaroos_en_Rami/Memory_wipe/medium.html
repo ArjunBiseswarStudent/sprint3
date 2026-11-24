@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Wipe - Medium</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="game">
+  <main class="game" data-mode="medium">
+    <p class="eyebrow">MEMORY WIPE</p>
+    <h1>Medium</h1>
+    <p class="intro" data-i18n="grid2by4">Een raster van 2 bij 4</p>
+    <p class="round-status" aria-live="polite" data-i18n="roundStatusInitial">Ronde 1 van 3</p>
+    <p class="round-countdown" aria-live="assertive"></p>
+    <p class="audio-status" aria-live="polite" data-i18n="microphoneNotice"></p>
+
+    <div class="memory-grid" role="group" aria-label="Raster met 2 rijen en 4 kolommen" data-i18n-aria-label="grid2by4Label">
+      <div class="memory-cell memory-cell--can" aria-hidden="true"></div>
+      <div class="memory-cell" aria-hidden="true"></div>
+      <div class="memory-cell" aria-hidden="true"></div>
+      <div class="memory-cell" aria-hidden="true"></div>
+      <div class="memory-cell" aria-hidden="true"></div>
+      <div class="memory-cell memory-cell--can" aria-hidden="true"></div>
+      <div class="memory-cell" aria-hidden="true"></div>
+      <div class="memory-cell" aria-hidden="true"></div>
+    </div>
+
+    <button class="round-button" type="button" data-i18n="nextRound">Volgende ronde</button>
+    <button class="audio-playback-button" type="button" data-i18n="playRecordingUnavailable" disabled>Luister naar opname</button>
+    <audio class="round-audio" preload="none"></audio>
+    <a class="back-link" href="index.html" data-i18n="backToMenu">Terug naar het menu</a>
+  </main>
+  <script src="javascript/language.js"></script>
+  <script src="javascript/rounds.js"></script>
+</body>
+</html>
