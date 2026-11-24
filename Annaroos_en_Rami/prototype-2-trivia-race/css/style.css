@@ -1,0 +1,187 @@
+/* Kleuren op één plek: wil je het thema aanpassen, doe het hier. */
+:root {
+  --achtergrond: #EEF6DC;   /* lichtgroen achter de hele pagina, ook aan de zijkanten */
+  --donker: #1E4356;        /* donker blauwgroen: tekst, randen en harde schaduwen */
+  --wit: #FFFFFF;           /* kaarten en de balk bovenaan */
+  --licht: #F7F9FA;         /* licht vak, bijvoorbeeld rond de timer */
+  --tekst-zacht: #4F6573;   /* kleinere uitlegteksten */
+  --lijn: #C9D1D6;          /* gestippelde scheidingslijnen */
+  --chip: #E3F0CF;          /* gevonden feitjes */
+  --groen: #5BA569;         /* de timerbalk */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--achtergrond);
+  color: var(--donker);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Witte balk bovenaan over de hele breedte */
+.topbalk {
+  background: var(--wit);
+  border-bottom: 2px solid var(--donker);
+  padding: 14px 24px;
+}
+.topbalk-naam { font-size: 1.5rem; font-weight: 800; }
+
+/* De inhoud staat in een gecentreerde kolom. Op een telefoon wordt die vanzelf smaller. */
+.app {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 28px 18px 48px;
+}
+
+/* Alleen het actieve scherm is zichtbaar. */
+.scherm { display: none; }
+.scherm.actief { display: block; }
+
+/* Kop met een korte uitleg eronder en een gestippelde lijn, zoals "Speelmodus" */
+.sectie-kop {
+  border-bottom: 2px dashed var(--lijn);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+.sectie-uitleg { margin: 4px 0 0; color: var(--tekst-zacht); font-size: 0.95rem; }
+
+h1 { font-size: 2rem; margin: 0; }
+h2 { font-size: 1.5rem; margin: 0; }
+h3 { font-size: 1.05rem; margin: 8px 0; color: var(--tekst-zacht); }
+.uitleg { color: var(--tekst-zacht); margin: 8px 0 24px; }
+
+/* Kaart: wit, afgeronde hoeken, donkere rand en een harde schaduw rechtsonder */
+.kaart {
+  background: var(--wit);
+  border: 2px solid var(--donker);
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 var(--donker);
+  padding: 24px;
+  text-align: center;
+}
+.kaart h2 { margin: 6px 0 14px; }
+
+.stippellijn { border: none; border-top: 2px dashed var(--lijn); margin: 18px 0; }
+
+/* Mossy */
+.mossy { width: 200px; max-width: 70%; height: auto; }
+.mossy.klein { width: 120px; }
+.mossy.mini { width: 64px; flex-shrink: 0; }
+
+/* Tekstballon van Mossy, in dezelfde stijl als de kaarten maar kleiner */
+.ballon {
+  display: inline-block;
+  background: var(--licht);
+  border: 2px solid var(--donker);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--donker);
+  padding: 10px 16px;
+  margin: 6px 0 16px;
+  max-width: 100%;
+}
+.ballon.links { text-align: left; margin: 0 0 8px; }
+
+/* Knoppen: de hoofdknop is donker gevuld, andere knoppen zijn wit. Allebei met een harde schaduw. */
+.knop {
+  background: var(--donker);
+  color: var(--wit);
+  border: 2px solid var(--donker);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--donker);
+  padding: 14px 36px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+/* Bij hover "zakt" de knop een beetje in, zodat je ziet dat je erop kunt klikken. */
+.knop:hover, .categorie-knop:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--donker); }
+.knop:focus-visible, .knop-tekst:focus-visible, input:focus-visible, .categorie-knop:focus-visible {
+  outline: 3px solid var(--groen);
+  outline-offset: 2px;
+}
+.knop-licht {
+  background: var(--wit);
+  color: var(--donker);
+  padding: 12px 22px;
+}
+.knop-tekst {
+  display: block;
+  margin: 22px auto 0;
+  background: none;
+  border: none;
+  color: var(--tekst-zacht);
+  text-decoration: underline;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Categoriekeuze */
+.categorie-lijst { display: grid; gap: 14px; margin-top: 8px; }
+.categorie-knop {
+  background: var(--wit);
+  border: 2px solid var(--donker);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--donker);
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: var(--donker);
+}
+.categorie-knop strong { display: block; }
+.categorie-knop span { color: var(--tekst-zacht); font-size: 0.95rem; }
+
+/* Spelscherm: grote timer in een licht vak, zoals in de screenshot */
+.timer {
+  background: var(--licht);
+  border: 2px solid var(--donker);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 2.6rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.balk { background: var(--licht); border: 2px solid var(--donker); border-radius: 999px; height: 14px; margin: 14px 0 20px; overflow: hidden; }
+.balk-vulling { background: var(--groen); height: 100%; width: 100%; transition: width 1s linear; }
+
+#antwoord-veld {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.05rem;
+  color: var(--donker);
+  border: 2px solid var(--donker);
+  border-radius: 8px;
+}
+.feedback { min-height: 1.5em; margin: 10px 0 0; color: var(--tekst-zacht); }
+.feedback.goed { color: var(--donker); font-weight: 700; }
+.score-regel { margin: 8px 0; }
+
+/* Lijstjes met gevonden/gemiste feitjes als "chips" */
+.chips { list-style: none; padding: 0; margin: 8px 0 18px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.chips li {
+  background: var(--chip);
+  border: 2px solid var(--donker);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.95rem;
+}
+.chips.gemist li { background: var(--wit); border-style: dashed; color: var(--tekst-zacht); }
+
+/* Hulplijn, met een gestippelde lijn erboven zodat hij los staat van het spel */
+.hulplijn { margin-top: 18px; padding-top: 18px; border-top: 2px dashed var(--lijn); }
+.hulplijn-uitleg { margin: 10px 0 0; color: var(--tekst-zacht); font-size: 0.95rem; }
+.hulp-vak { display: flex; align-items: flex-start; gap: 10px; margin-top: 14px; text-align: left; }
+.hulp-vak.verborgen { display: none; }
+.hulp-na { margin: 0; color: var(--tekst-zacht); font-size: 0.95rem; }
+
+/* Op heel smalle schermen iets kleiner */
+@media (max-width: 420px) {
+  h1 { font-size: 1.7rem; }
+  .kaart { padding: 18px; }
+  .knop { padding: 12px 26px; }
+  .timer { font-size: 2.1rem; }
+}

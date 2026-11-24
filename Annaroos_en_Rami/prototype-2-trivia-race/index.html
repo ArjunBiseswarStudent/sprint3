@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: zorgt dat de pagina goed past op een telefoon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trivia Race - een gezondheidsquiz met Mossy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Witte balk bovenaan met de naam van het spel -->
+  <header class="topbalk">
+    <span class="topbalk-naam">Trivia Race</span>
+  </header>
+
+  <main class="app">
+
+    <!-- Scherm 1: start -->
+    <section id="scherm-start" class="scherm actief">
+      <div class="sectie-kop">
+        <h1>Trivia Race</h1>
+        <p class="sectie-uitleg">een gezondheidsquiz met Mossy</p>
+      </div>
+      <div class="kaart">
+        <img class="mossy" src="assets/mossy.png" alt="Mossy, een vriendelijk groen wezentje">
+        <p class="ballon" data-mossy="start"></p>
+        <p class="uitleg">Een race tegen de klok: je krijgt 60 seconden en een thema. Noem zoveel mogelijk gezondheidsfeitjes. Er worden geen gegevens opgeslagen.</p>
+        <button id="knop-start" class="knop">Start de race</button>
+      </div>
+    </section>
+
+    <!-- Scherm 2: categorie kiezen -->
+    <section id="scherm-categorie" class="scherm">
+      <div class="sectie-kop">
+        <h2>Kies een thema</h2>
+        <p class="sectie-uitleg">Kies zelf een van de zes dimensies van Positieve Gezondheid. Daarna start de race.</p>
+      </div>
+      <div class="kaart">
+        <img class="mossy klein" src="assets/mossy.png" alt="Mossy">
+        <p class="ballon" data-mossy="categorie"></p>
+        <div id="categorie-lijst" class="categorie-lijst"></div>
+      </div>
+    </section>
+
+    <!-- Scherm 3: het spel -->
+    <section id="scherm-spel" class="scherm">
+      <div class="sectie-kop">
+        <h2 id="spel-titel"></h2>
+        <p class="sectie-uitleg">Typ een feitje en druk op Enter. Noem er zoveel mogelijk voordat de tijd op is.</p>
+      </div>
+      <div class="kaart">
+        <div class="timer" aria-live="polite"><span id="timer-tekst">60</span> s</div>
+        <div class="balk"><div id="timer-balk" class="balk-vulling"></div></div>
+
+        <form id="antwoord-formulier" autocomplete="off">
+          <input id="antwoord-veld" type="text" placeholder="Typ een feitje en druk op Enter" aria-label="Je antwoord">
+        </form>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+
+        <p class="score-regel">Score: <strong id="score-tekst">0</strong></p>
+        <ul id="gevonden-lijst" class="chips"></ul>
+
+        <!-- Hulplijn -->
+        <div class="hulplijn">
+          <button id="knop-hulp" class="knop knop-licht">Hulplijn: vraag Mossy om een hint</button>
+          <p class="hulplijn-uitleg">Weet je even niets meer? Mossy geeft je een tip.</p>
+          <div id="hulp-vak" class="hulp-vak verborgen">
+            <img class="mossy mini" src="assets/mossy.png" alt="Mossy">
+            <div>
+              <p id="hulp-hint" class="ballon links"></p>
+              <p id="hulp-na" class="hulp-na"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button id="knop-klaar" class="knop-tekst">Ik ben klaar</button>
+    </section>
+
+    <!-- Scherm 4: einde -->
+    <section id="scherm-einde" class="scherm">
+      <div class="sectie-kop">
+        <h2>Einde van de race</h2>
+        <p class="sectie-uitleg">Bekijk je score en wat er binnen dit thema nog meer mogelijk was.</p>
+      </div>
+      <div class="kaart">
+        <img class="mossy klein" src="assets/mossy.png" alt="Mossy">
+        <p id="einde-ballon" class="ballon"></p>
+        <h2>Je score: <span id="einde-score"></span> van <span id="einde-totaal"></span></h2>
+        <hr class="stippellijn">
+        <h3>Dit zijn nog mogelijke dingen die je nog niet hebt genoemd binnen <span id="einde-dimensie"></span></h3>
+        <ul id="gemist-lijst" class="chips gemist"></ul>
+        <button id="knop-opnieuw" class="knop">Nog een ronde</button>
+      </div>
+    </section>
+
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
